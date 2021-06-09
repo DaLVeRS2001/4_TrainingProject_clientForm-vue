@@ -1,0 +1,42 @@
+@mixin selectSetting($w, $h, $br, $b){
+  width: $w;
+  height: $h;
+  border-radius: $br;
+  border: $b;
+
+}
+
+
+.select {
+  position: relative;
+
+
+  .switcher {
+    cursor: pointer;
+
+    .field {
+      @include selectSetting(240px, 25px, null, 1px solid black);
+      cursor: pointer;
+      color: black;
+    }
+    .mark {
+      position: absolute;
+      right: 5px;
+      top: 3px;
+    }
+  }
+
+  .items {
+    @include selectSetting(99.3%, 100px, null, 1px solid black);
+    position: absolute;
+    border-top: 0;
+
+    .item {
+      cursor: pointer;
+      margin: 3.6% 0 0 5px;
+    }
+    .clickedItem {
+      text-decoration: line-through;
+    }
+  }
+}
