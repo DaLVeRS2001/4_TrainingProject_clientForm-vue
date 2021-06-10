@@ -1,0 +1,69 @@
+@mixin selectSetting($w, $h, $br, $b){
+  width: $w;
+  height: $h;
+  border-radius: $br;
+  border: $b;
+
+}
+
+label{
+  font-weight: bold;
+}
+
+
+form{
+  width: 870px;
+  border: 1px solid black;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  .field{
+    @include selectSetting(240px, 25px, null, 1px solid black);
+    margin-top: 5px;
+    border-radius: 3px
+  }
+  .inputBlock{
+  margin-right: 15px;
+    position: relative;
+
+    .errorMessage{
+      position: absolute;
+      left: 0;
+      bottom: -17px;
+      color: red;
+    }
+  }
+  .doc{width: 110px;}
+  .long{width: 760px}
+}
+
+
+.part {
+  display: flex;
+  margin: 25px;
+}
+.error{
+  border: 1px solid red;
+}
+
+
+
+@media  (max-width: 768px) {
+ .inputBlock{
+   margin-bottom: 20px;
+ }
+  .part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px auto;
+    .long{width: 360px;}
+  }
+  h2,h1{
+    text-align: center;
+  }
+}
+
+
