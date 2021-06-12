@@ -2,6 +2,7 @@
   <form @submit.prevent="submit">
   <div class="mainInfo">
     <h1>Новый клиент</h1>
+    
     <div class="part one">
       <field-title
         titleName="Фамилия: " label="surname"
@@ -12,8 +13,6 @@
           type="text" name="surname" id="surname"
           @focus="v$.surname.$touch()"
         />
-
-
         <div v-if="v$.surname.$error" class="errorMessage">
           <small v-if="v$.surname.required.$invalid">
             Обезательное поле
@@ -23,6 +22,7 @@
           </small>
         </div>
       </field-title>
+      
       <field-title titleName="Имя: " label="name">
         <input
           v-model="client.mainInfo.name" @focus="v$.client.mainInfo.name.$touch"
@@ -38,6 +38,7 @@
           </small>
         </div>
       </field-title>
+      
       <field-title titleName="Отчество: " label="middleName">
         <input
           v-model="client.mainInfo.middleName" @focus="v$.client.mainInfo.middleName.$touch"
@@ -51,6 +52,7 @@
         </div>
       </field-title>
     </div>
+   
 
     <div class="part two">
       <field-title titleName="Дата рождения: " label="birthDate">
@@ -65,6 +67,7 @@
           </small>
         </div>
       </field-title>
+      
       <field-title titleName="Номер телефона: " label="phoneNumber">
         <input
           v-model="client.mainInfo.phoneNumber" @focus="v$.client.mainInfo.phoneNumber.$touch"
@@ -80,6 +83,7 @@
           </small>
         </div>
       </field-title>
+      
       <div style="margin-top: 17px">
         <div>Пол:</div>
         <div style="display: flex">
@@ -101,6 +105,7 @@
       </div>
     </div>
 
+
     <div class="part three">
       <field-title titleName="Группа клиентов: " label="group">
         <CustomSelect
@@ -115,6 +120,7 @@
           </small>
         </div>
       </field-title>
+      
       <field-title titleName="Лечащий врач: " label="doctor">
         <CustomSelect
           :itemsData="doctors"
@@ -122,6 +128,7 @@
           placeholder="Выберите врача"  @click-select="changeValue"
         />
       </field-title>
+      
       <div>
         <div style="margin-top: 17px">
           <span>Уведомление: </span><br>
@@ -150,6 +157,7 @@
           @focus="v$.client.addressInfo.index.$touch"
         />
       </field-title>
+      
       <field-title titleName="Страна: " label="country">
         <input
           v-model="client.addressInfo.country"
@@ -162,6 +170,7 @@
           </small>
         </div>
       </field-title>
+      
       <field-title titleName="Область: " label="region">
         <input
           v-model="client.addressInfo.region"
@@ -176,6 +185,7 @@
         </div>
       </field-title>
     </div>
+
 
     <div class="part two" >
       <field-title titleName="Город: " label="city">
@@ -193,6 +203,7 @@
           </small>
         </div>
       </field-title>
+      
       <field-title titleName="Улица: " label="street">
         <input
           v-model="client.addressInfo.street"
@@ -205,6 +216,7 @@
           </small>
         </div>
       </field-title>
+      
       <field-title titleName="Дом: " label="houseNum">
         <input
           v-model="client.addressInfo.houseNum"
@@ -214,6 +226,7 @@
       </field-title>
     </div>
   </div>
+
 
 
 
@@ -233,6 +246,7 @@
           </small>
         </div>
       </field-title>
+      
       <field-title titleName="Серия: " label="docSeries">
         <input
           v-model="client.docInfo.docSeries"
@@ -241,6 +255,7 @@
           @focus="v$.client.docInfo.docSeries.$touch"
         />
       </field-title>
+      
       <field-title titleName="Номер: " label="docNum">
         <input
           v-model="client.docInfo.docNum"
@@ -248,6 +263,7 @@
           type="number" id="docNum" @focus="v$.client.docInfo.docNum.$touch"
         />
       </field-title>
+      
       <field-title titleName="Дата выдачи: " label="docDate">
         <input
           v-model="client.docInfo.docDate"  type="date" id="docDate"
@@ -261,6 +277,7 @@
         </div>
       </field-title>
     </div>
+
 
     <div class="part two">
       <field-title titleName="Кем выдан: " label="department">
